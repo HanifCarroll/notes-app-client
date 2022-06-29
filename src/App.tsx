@@ -1,6 +1,7 @@
 import './App.css';
 import { DateTime } from 'luxon';
 import { FormEvent, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Note } from './types';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
     const newNote: Note = {
       content,
       created: DateTime.now(),
-      id: '1',
+      id: uuidv4(),
       title,
       updated: DateTime.now(),
     };
