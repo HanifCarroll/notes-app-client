@@ -1,7 +1,9 @@
+import { DateTime } from 'luxon';
+
 export type Note = {
   content: string;
-  created: Date;
+  created: DateTime;
   id: string;
   title: string;
-  updated: Date;
+  updated: DateTime;
 };

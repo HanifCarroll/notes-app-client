@@ -1,4 +1,5 @@
 import './App.css';
+import { DateTime } from 'luxon';
 import { FormEvent, useState } from 'react';
 import { Note } from './types';
 
@@ -20,10 +21,10 @@ function App() {
     e.preventDefault();
     const newNote: Note = {
       content,
-      created: new Date(),
+      created: DateTime.now(),
       id: '1',
       title,
-      updated: new Date(),
+      updated: DateTime.now(),
     };
     createNote(newNote);
     clearValues();
