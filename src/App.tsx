@@ -32,16 +32,26 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <form onSubmit={onSubmit}>
-        <label>Title</label>
-        <input type={'text'} value={title} onChange={(e) => setTitle(e.target.value)} />
+    <div>
+      <div className="flex justify-center items-center">
+        <form onSubmit={onSubmit}>
+          <label>Title</label>
+          <input type={'text'} value={title} onChange={(e) => setTitle(e.target.value)} />
 
-        <label>Content</label>
-        <textarea value={content} onChange={(e) => setContent(e.target.value)} />
+          <label>Content</label>
+          <textarea value={content} onChange={(e) => setContent(e.target.value)} />
 
-        <input type={'submit'} value={'Save'} />
-      </form>
+          <input type={'submit'} value={'Save'} />
+        </form>
+      </div>
+      <div>
+        {notes.map(({ content, title }) => (
+          <div>
+            <h3>{title}</h3>
+            <div>{content}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
