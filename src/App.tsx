@@ -13,6 +13,10 @@ function App() {
     setNotes([...notes, newNote]);
   }
 
+  function deleteNote(id: string) {
+    setNotes(notes.filter((note) => note.id !== id));
+  }
+
   function clearValues() {
     setTitle('');
     setContent('');
@@ -45,8 +49,9 @@ function App() {
         </form>
       </div>
       <div>
-        {notes.map(({ content, title }) => (
+        {notes.map(({ content, id, title }) => (
           <div>
+            <button onClick={() => deleteNote(id)}>Delete</button>
             <h3>{title}</h3>
             <div>{content}</div>
           </div>
